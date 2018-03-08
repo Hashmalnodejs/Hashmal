@@ -23,9 +23,9 @@ function start()
     setTimeout(action, counter * 1000);
 }
 
-document.getElementById("select_currency").addEventListener("change", function( event ) {
-  document.getElementById("form_currency").submit()
-}, false);
+// document.getElementById("select_currency").addEventListener("change", function( event ) {
+//   document.getElementById("form_currency").submit()
+// }, false);
 
 jQuery(function($){
     $("#demarrer").click(function(){
