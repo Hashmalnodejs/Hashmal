@@ -1,0 +1,9 @@
+extends ./template/base
+
+block body
+    h1 Page de liste.
+    ul
+        each product in products
+            li
+                a(href=`/product/${product.id}`)= `Produit : ${product.name}` + ` Prix: ${product.priceEur}`
+    a(href='/ajout') ajout
