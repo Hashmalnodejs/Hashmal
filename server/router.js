@@ -6,6 +6,8 @@ const router = express.Router()
 module.exports = router
 
 router.get('/', (req, res) => {
-    // res.send('lol')
-    res.render('index')
+  res.render('index', {
+    title: 'Hashmal',
+    h1: `Hashmal`
+  })
 })

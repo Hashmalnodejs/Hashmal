@@ -1,0 +1,54 @@
+// out: ../css/style.min.css, sourcemap: true, compress: true
+
+body {
+  font-family: 'Raleway', sans-serif;
+  padding-top: 56px;
+}
+
+header {
+  h1 {
+    font-family: 'Teko', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.04rem;
+    font-size: 4rem;
+  }
+}
+
+nav {
+  .navbar-brand {
+
+  }
+
+  .navbar-collapse {
+    .navbar-nav {
+      li {
+        a {
+          &:hover {
+            &::before, &:after {
+              width: 100%;
+            }
+          }
+
+          &::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #0fbcf9;
+            transition: all 0.4s ease;
+            margin-left: auto;
+          }
+
+          &:after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #0fbcf9;
+            transition: all 0.4s ease;
+          }
+        }
+      }
+    }
+  }
+}
