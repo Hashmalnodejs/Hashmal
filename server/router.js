@@ -21,3 +21,19 @@ router.get('/products', (req, res) => {
             })
         })
 })
+
+
+router.get('/add', (req, res) => {
+    res.render('add')
+})
+
+router.post('/add', (req, res) => {
+    console.log(req.params)
+    // console.log(fakeDB.add({
+    //     name: req.body.name,
+    //     priceEur: req.body.priceEur
+    // },
+    //     (err, res) => {
+    //     console.log(res)
+    // }))
+})
