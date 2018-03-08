@@ -9,9 +9,9 @@ block body
 
         form(method='post' action='/add')
             div.form-group
-                label(for='name') Name:
-                input.form-control(id="name" type='text', placeholder='Product name...' name='name', required)
+                label(for='name') Nom du produit :
+                input.form-control(id="name" type='text', placeholder='Nom du produit...' name='name', required)
             div.form-group    
-                label(for='priceEur') Price:
-                input.form-control(id="priceEur" type='number' step='any', placeholder='Price in euros...' name='priceEur', required)
+                label(for='priceEur') Prix du produit :
+                input.form-control(id="priceEur" type='number' step='any', placeholder='Prix en euros...' name='priceEur', required)
             input.btn.btn-primary(type='submit' value="Ajouter un produit")
