@@ -2,7 +2,7 @@ extends ./template/base
 
 block body
     h1 Page de liste.
-    form(id="form_currency", action='/products', method='get')
+    form(id="form_currency", action=`/product/${product.id}`, method='get')
         select(id="select_currency", name="currency")
             option(value=currencies[0].base)= currencies[0].base
             each value, currency in currencies[0].rates
@@ -10,10 +10,8 @@ block body
                     option(value=`${currency}` selected)= currency
                 else
                     option(value=`${currency}`)= currency
-    a(href=`/currency/${curr}`) détails
     ul
-        each product in products
-            - var concat = (+product.priceEur * +factor).toFixed(2)
-            li
-                a(href=`/product/${product.id}`)= `Produit : ${product.name}` + ` Prix: ${concat}`
-    a(href='/Add') Add
+        - var concat = (+product.priceEur * +factor).toFixed(2)
+        li
+            a(href=`/product/${product.id}`)= `Produit : ${product.name}` + ` Prix: ${concat}`
+    a(href='/ajout') ajout

@@ -1,0 +1,14 @@
+extends ./template/base
+
+block body
+    h1 Page d'ajout'.
+
+    form(method='post' action='/add')
+        label(for='name') Name:
+        input(id="name" type='text', placeholder='Product name...' name='name', required)
+        label(for='priceEur') Price:
+        input(id="priceEur" type='number' step='any', placeholder='Price in euros...' name='priceEur', required)
+        input(type='submit' value="add")
+
+
+    a(href='Products') Products

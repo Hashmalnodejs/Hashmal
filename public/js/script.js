@@ -1,4 +1,4 @@
-var counter = 3;
+var counter = 4;
 var intervalId = null;
 
 function action()
@@ -10,7 +10,7 @@ function action()
 }
 function bip()
 {
-    document.getElementById("bip").innerHTML = counter;
+    document.getElementById("bip").innerHTML = counter - 1;
     $('#bip').show();
     $('#bip').addClass('animated bounceIn');
     counter--;

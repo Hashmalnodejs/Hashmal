@@ -16,6 +16,7 @@ html, body {
 body {
     font-family: 'Raleway', sans-serif;
     padding-top: 60px;
+    position: relative;
 
     &.animated {
         animation-duration: 4s !important;
@@ -32,6 +33,7 @@ body {
         text-align: center;
 
         h1 {
+            color: #FFF;
             font-family: 'Teko', sans-serif;
             font-weight: bold;
             letter-spacing: 0.04rem;
@@ -54,9 +56,9 @@ body {
                 left: 50%;
                 margin-left: -45px;
                 display: none;
-                color: #000;
+                color: #FFF;
                 font-size: 4rem;
-                border: 6px solid #000;
+                border: 6px solid #FFF;
                 animation-duration: 1s !important;
                 font-weight: 700;
                 height: 90px;
@@ -64,6 +66,29 @@ body {
                 padding: 10px;
                 line-height: 3rem;
                 border-radius: 50%;
+            }
+        }
+
+        .social {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+
+            ul {
+                li {
+                    margin: 0 20px;
+                    a {
+                        font-size: 1.6rem;
+                        color: #FFF;
+                        opacity: 0.6;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
             }
         }
     }
