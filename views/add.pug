@@ -1,14 +1,17 @@
 extends ./template/base
 
 block body
-    h1 Page d'ajout'.
+    div.container
+        
+        a.mt-4.d-inline-block.text-primary(href='/products') < Liste des produits
+    
+        h1.text-center.my-5 Ajouter un produit
 
-    form(method='post' action='/add')
-        label(for='name') Name:
-        input(id="name" type='text', placeholder='Product name...' name='name', required)
-        label(for='priceEur') Price:
-        input(id="priceEur" type='number' step='any', placeholder='Price in euros...' name='priceEur', required)
-        input(type='submit' value="add")
-
-
-    a(href='Products') Products
+        form(method='post' action='/add')
+            div.form-group
+                label(for='name') Name:
+                input.form-control(id="name" type='text', placeholder='Product name...' name='name', required)
+            div.form-group    
+                label(for='priceEur') Price:
+                input.form-control(id="priceEur" type='number' step='any', placeholder='Price in euros...' name='priceEur', required)
+            input.btn.btn-primary(type='submit' value="Ajouter un produit")

@@ -21,7 +21,14 @@ app.use('/static', express.static('public'))
 //     }
 //     next()
 // })
-
+app.use('/private', function(req, res, next) {
+  return res.status('403').render('403')
+  next()
+})
+app.use('/private/*', function(req, res, next) {
+  return res.status('403').render('403')
+  next()
+})
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));

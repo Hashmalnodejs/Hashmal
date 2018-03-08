@@ -100,7 +100,7 @@ router.post('/add', (req, res) => {
                 console.log(res)
             })
         res.redirect('/add')
-        
+
     } else {
         res.send("Une erreur est survenue lors de l'entrée de vos données. Veuillez réessayer <a href='/add'>Ici</a> ")
     }
