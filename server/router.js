@@ -20,21 +20,24 @@ router.get('/products', (req, res) => {
         })
     Promise.all([currencies])
         .then(curr => {
-            let factor
-            if (req.query.currency !== 'EUR') {
+            let factor = 1
+            let nameCurr ="EUR"
+            if (typeof req.query.currency !== 'undefined') {
                 factor = curr[0].rates[req.query.currency]
-            }else {
-                factor = 1
+                nameCurr = req.query.currency
             }
+            if (req.query.currency == 'EUR') {
+                    factor = 1
+            }
+
             fakeDB.getAll()
                 .then(products => {
                         res.render('products',{
                             products: products,
                             currencies: curr,
-                            curr: req.query.currency,
-                            factor: factor
+                            factor: factor,
+                            curr: nameCurr
                         })
                 })
         })
 })
-

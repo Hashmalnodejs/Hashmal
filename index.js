@@ -14,7 +14,7 @@ app.use('/static', express.static('public'))
 app.use((req, res, next) => {
     const minutes = new Date().getMinutes()
     if (minutes > 48 && minutes <= 59) {
-        res.status(408).render('408')
+        return res.status(408).render('408')
     } else {
         console.log('ok')
     }

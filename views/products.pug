@@ -10,6 +10,7 @@ block body
                     option(value=`${currency}` selected)= currency
                 else
                     option(value=`${currency}`)= currency
+    a(href=`/currency/${curr}`) détails
     ul
         each product in products
             - var concat = (+product.priceEur * +factor).toFixed(2)
