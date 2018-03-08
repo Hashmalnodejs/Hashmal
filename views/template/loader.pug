@@ -1,0 +1,31 @@
+doctype html
+html(
+    lang="fr",
+)
+    head
+        meta(charset="utf-8")
+        title #{title}
+        link(
+            rel="stylesheet",
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+        )
+        link(
+            rel="stylesheet",
+            href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900|Teko:300,400,500,600,700",
+        )
+        link(
+            rel="stylesheet",
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css",
+        )
+        link(
+            rel="stylesheet",
+            href="/static/css/style.min.css",
+        )
+    body.loader
+        block body
+
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src="https://use.fontawesome.com/e9b8ab0248.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+        script(src="/static/js/script.js")

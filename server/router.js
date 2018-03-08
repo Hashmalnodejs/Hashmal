@@ -7,10 +7,18 @@ const router = express.Router()
 module.exports = router
 
 router.get('/', (req, res) => {
-    res.render('index', {
-        title: 'Hashmal',
-        h1: `Hashmal`
-    })
+  res.render('loader', {
+    title: 'Hashmal',
+    h1: `Hashmal`,
+  })
+})
+
+router.get('/home', (req, res) => {
+  res.render('index', {
+    title: 'Hashmal',
+    h1: `Hashmal`,
+    h3: `Découvrez la technologie du futur`
+  })
 })
 
 router.get('/products', (req, res) => {
@@ -37,4 +45,3 @@ router.get('/products', (req, res) => {
                 })
         })
 })
-
