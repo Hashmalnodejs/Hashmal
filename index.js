@@ -1,30 +1,27 @@
 const express = require('express')
 const path = require('path')
+const morgan = require('morgan')
 const router = require('./server/router')
 const app = express()
 
-<<<<<<< Updated upstream
+app.use(express.urlencoded())
+app.use(express.json())
+app.use(morgan('tiny'))
+app.use('/static', express.static('public'))
 /**
  * Si la requête est effectué entre la 49éme et la 59éme minute, nous renvoyons une erreur 408. (timeout error)
  */
 app.use((req, res, next) => {
     const minutes = new Date().getMinutes()
     if (minutes > 48 && minutes <= 59) {
-        res.status(408)
-        res.render('408')
+        res.status(408).render('408')
     } else {
         console.log('ok')
     }
     next()
 })
 
-app.use('/static/css', express.static('public/css'))
-app.use('/static/js', express.static('public/js'))
-=======
-app.use(express.urlencoded())
-app.use(express.json())
-app.use('/static', express.static('public'))
->>>>>>> Stashed changes
+
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
