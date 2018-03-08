@@ -84,7 +84,10 @@ router.get('/product/:id', (req, res) => {
 
 
 router.get('/add', (req, res) => {
-    res.render('add')
+    console.log(req.query.success)
+    res.render('add',{
+        success : req.query.success
+    })
 })
 
 router.post('/add', (req, res) => {
@@ -95,14 +98,21 @@ router.post('/add', (req, res) => {
         fakeDB.add({
                 name: req.body.name,
                 priceEur: req.body.priceEur
-            },
-            (err, res) => {
-                console.log(res)
             })
-        res.redirect('/add')
+            .then(() => {
+                return validation = 'true'
+
+            })
+            .catch(() => {
+                return validation = 'false'
+
+            })
+            .then((result) => {
+                res.redirect('/add?success='+result)
+            })
 
     } else {
-        res.send("Une erreur est survenue lors de l'entrée de vos données. Veuillez réessayer <a href='/add'>Ici</a> ")
+        res.redirect('/add?success=false')
     }
 
 })
