@@ -24,7 +24,7 @@ function start()
 }
 
 
-if (location.pathname == "/products" || location.pathname == "/product") {
+if ($('#select_currency').length > 0) {
     $("#select_currency").change((event) => {
         $("#form_currency").submit()
     })
