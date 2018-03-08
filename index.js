@@ -6,14 +6,12 @@ const app = express()
 
 /**
  * Si la requête est effectué entre la 49éme et la 59éme minute, nous renvoyons une erreur 408. (timeout error)
+ * Ajout du return pour éviter l'erreur "Can't set headers after they are sent "
  */
 app.use((req, res, next) => {
     const minutes = new Date().getMinutes()
     if (minutes > 48 && minutes <= 59) {
-        res.status(408)
-        res.render('408')
-    } else {
-        console.log('ok')
+        return res.status(408).render('408')
     }
     next()
 })
