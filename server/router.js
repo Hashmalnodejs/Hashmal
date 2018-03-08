@@ -74,7 +74,7 @@ router.get('/product/:id', (req, res) => {
                     res.render('product', {
                         product: product,
                         currencies: curr,
-                        curr: req.query.currency,
+                        curr: nameCurr,
                         factor: factor
                     })
                 })

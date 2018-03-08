@@ -1,6 +1,24 @@
 var counter = 4;
 var intervalId = null;
 
+var currentUrl = window.location.href;
+var getLocation = function(href) {
+    var l = document.createElement("a");
+    l.href = href;
+    return l;
+};
+var url = getLocation(currentUrl);
+var linkNav = $('.navbar-nav a').attr('href');
+
+var linkNav = $('.navbar-nav a')
+for (var i = 0; i < linkNav.length; i++) {
+    console.log(linkNav[i].pathname);
+    if(url.pathname == linkNav[i].pathname){
+        $(linkNav[i]).parent().addClass('active')
+    }
+}
+
+
 function action()
 {
     clearInterval(intervalId);

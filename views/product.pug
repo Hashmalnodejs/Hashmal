@@ -5,6 +5,10 @@ block body
         div.row.my-5
             div.col-12.col-lg-6
                 div.img-produit
+                    img.img-fluid.d-block.mx-auto(
+                        src="https://picsum.photos/500/?image="+ product.id
+                        alt=""
+                    )
             div.col-12.col-lg-6
                 h1 #{product.name}
                 p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -13,6 +17,6 @@ block body
                     - var concat = (+product.priceEur * +factor).toFixed(2)
                     p.m-0.mr-2
                         b Prix : 
-                        span= `${concat}` + curr
+                        span= `${concat} ` + curr
                     form(id="form_currency", action=`/product/${product.id}`, method='get')
                         include include/currency_form
