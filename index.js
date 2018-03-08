@@ -1,9 +1,13 @@
 const express = require('express')
 const path = require('path')
+const morgan = require('morgan')
 const router = require('./server/router')
-
 const app = express()
 
+app.use(express.urlencoded())
+app.use(express.json())
+app.use(morgan('tiny'))
+app.use('/static', express.static('public'))
 /**
  * Si la requête est effectué entre la 49éme et la 59éme minute, nous renvoyons une erreur 408. (timeout error)
  * Ajout du return pour éviter l'erreur "Can't set headers after they are sent "
@@ -16,8 +20,7 @@ app.use((req, res, next) => {
     next()
 })
 
-app.use('/static/css', express.static('public/css'))
-app.use('/static/js', express.static('public/js'))
+
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
