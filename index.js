@@ -16,11 +16,6 @@ app.use((req, res, next) => {
     const minutes = new Date().getMinutes()
     if (minutes > 48 && minutes <= 59) {
         return res.status(408).render('408')
-<<<<<<< HEAD
-    } else {
-        console.log('ok')
-=======
->>>>>>> b2254e94044f16a8d7e4792e5d8e9c82c411b89a
     }
     next()
 })
