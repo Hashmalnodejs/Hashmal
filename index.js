@@ -29,9 +29,8 @@ app.use(router)
 /**
  * Si la route n'est pas trouvé, nous renvoyons une erreur 404. (not found)
  */
-router.get('*', (req, res, next) => {
-    res.status(404)
-    res.render('404')
+router.get('*', (req, res) => {
+    return res.status(404).render('404')
 })
 
 app.listen(8000, (err) => {
