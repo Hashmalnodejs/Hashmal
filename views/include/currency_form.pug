@@ -1,0 +1,7 @@
+select(id="select_currency", name="currency")
+    option(value=currencies[0].base)= currencies[0].base
+    each value, currency in currencies[0].rates
+        if currency == curr
+            option(value=`${currency}` selected)= currency
+        else
+            option(value=`${currency}`)= currency
