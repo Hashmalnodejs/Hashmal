@@ -13,7 +13,5 @@ block body
                         div.img-produit.card-img-top
                         div.content-produit
                             h3= `${product.name}`
-                            p= ` Prix: ${concat}`
+                            p= ` Prix: ${concat} ` + curr
                             a(href=`/product/${product.id}`).btn.btn-primary En savoir +
-
-        a(href='/ajout') ajout
