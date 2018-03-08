@@ -38,6 +38,7 @@ Lorsque vous êtes sur cette page, vous pouvez cliquer sur `en savoir +` pour av
 <br><br>
 Si vous voulez créer un produit, il vous suffira d'aller sur la page `Ajouter un produit` , puis de remplir le formulaire.
 
+Un lien pour le contact est installé dans le menu, car nous avons préféré travailler sans l'utilisation de footer.
 
 # Consignes
 
