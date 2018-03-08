@@ -1,3 +1,11 @@
-p lol
-
-//- trop de popularite 
+extends ./template/loader
+  
+block body
+    div.content
+        h1
+            strong Erreur 408
+            br
+            span le serveur est occupé
+        div.compteur
+            button#demarrer.btn.btn-primary.btn-lg.rounded-0.bg-light.border-0.text-primary Accueil
+            div#bip.display
