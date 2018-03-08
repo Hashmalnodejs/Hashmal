@@ -88,13 +88,21 @@ router.get('/add', (req, res) => {
 })
 
 router.post('/add', (req, res) => {
-    fakeDB.add({
-        name: req.body.name,
-        priceEur: req.body.priceEur
-    },
-        (err, res) => {
-        console.log(res)
-    })
+    const name = req.body.name
+    const price = req.body.priceEur
 
-    res.redirect('/add')
+    if(name.trim() && price.trim() && price >= 0) {
+        fakeDB.add({
+                name: req.body.name,
+                priceEur: req.body.priceEur
+            },
+            (err, res) => {
+                console.log(res)
+            })
+        res.redirect('/add')
+        
+    } else {
+        res.send("Une erreur est survenue lors de l'entrée de vos données. Veuillez réessayer <a href='/add'>Ici</a> ")
+    }
+
 })
