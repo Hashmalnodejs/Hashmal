@@ -4,6 +4,42 @@ Groupe Hashmal :
 
 Composé de Patrice Picollet, Antony Corrot, Dylan Trochain et Le Hoang Dinh Nguyen
 
+
+# Hashmal
+
+## Procédures de départ
+
+```
+git clone https://github.com/Hashmalnodejs/Hashmal.git directory
+cd directory
+docker-compose run server bash
+npm install (A faire dans le container dev)
+exit
+docker-compose up server
+
+```
+
+Puis aller sur `http://localhost:8000`
+
+## Technos utilisées
+
+- Express
+- Morgan
+- Nodemon
+- Pug
+- Bootstrap
+
+## Utilisation de l'application
+
+Il suffit de déclencher le compteur des trois secondes pour ainsi être transporté sur le menu home.
+<br><br>
+Une fois dessus, vous avez accès à la liste des produits créés dans le menu `Nos produits` .
+Lorsque vous êtes sur cette page, vous pouvez cliquer sur `en savoir +` pour avoir accès à la page personnalisée du produit en question.
+<br><br>
+Si vous voulez créer un produit, il vous suffira d'aller sur la page `Ajouter un produit` , puis de remplir le formulaire.
+
+Un lien pour le contact est installé dans le menu, car nous avons préféré travailler sans l'utilisation de footer.
+
 # Consignes
 
 - Démarrez votre projet à partir d'un clone de ce repository.

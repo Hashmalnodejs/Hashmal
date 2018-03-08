@@ -12,7 +12,6 @@ var linkNav = $('.navbar-nav a').attr('href');
 
 var linkNav = $('.navbar-nav a')
 for (var i = 0; i < linkNav.length; i++) {
-    console.log(linkNav[i].pathname);
     if(url.pathname == linkNav[i].pathname){
         $(linkNav[i]).parent().addClass('active')
     }
