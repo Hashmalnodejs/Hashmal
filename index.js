@@ -14,13 +14,13 @@ app.use('/static', express.static('public'))
  * Si la requête est effectué entre la 49éme et la 59éme minute, nous renvoyons une erreur 408. (timeout error)
  * Ajout du return pour éviter l'erreur "Can't set headers after they are sent "
  */
-app.use((req, res, next) => {
-    const minutes = new Date().getMinutes()
-    if (minutes > 48 && minutes <= 59) {
-        return res.status(408).render('408')
-    }
-    next()
-})
+// app.use((req, res, next) => {
+//     const minutes = new Date().getMinutes()
+//     if (minutes > 48 && minutes <= 59) {
+//         return res.status(408).render('408')
+//     }
+//     next()
+// })
 
 
 app.set("view engine", "pug");
@@ -31,9 +31,8 @@ app.use(router)
 /**
  * Si la route n'est pas trouvé, nous renvoyons une erreur 404. (not found)
  */
-router.get('*', (req, res, next) => {
-    res.status(404)
-    res.render('404')
+router.get('*', (req, res) => {
+    return res.status(404).render('404')
 })
 
 app.listen(8000, (err) => {

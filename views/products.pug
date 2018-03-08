@@ -1,19 +1,25 @@
 extends ./template/base
 
 block body
-    h1 Page de liste.
-    form(id="form_currency", action='/products', method='get')
-        select(id="select_currency", name="currency")
-            option(value=currencies[0].base)= currencies[0].base
-            each value, currency in currencies[0].rates
-                if currency == curr
-                    option(value=`${currency}` selected)= currency
-                else
-                    option(value=`${currency}`)= currency
-    a(href=`/currency/${curr}`) détails
-    ul
-        each product in products
-            - var concat = (+product.priceEur * +factor).toFixed(2)
-            li
-                a(href=`/product/${product.id}`)= `Produit : ${product.name}` + ` Prix: ${concat}`
-    a(href='/Add') Add
+    div.container
+        h1.text-center.my-5 Nos produits
+        form(id="form_currency", action='/products', method='get')
+            select(id="select_currency", name="currency") 
+                option(value=currencies[0].base)= currencies[0].base
+                each value, currency in currencies[0].rates
+                    if currency == curr
+                        option(value=`${currency}` selected)= currency
+                    else
+                        option(value=`${currency}`)= currency
+        div.row.justify-content-center#productList
+            each product in products
+                - var concat = (+product.priceEur * +factor).toFixed(2)
+                div.col-12.col-md-6.col-lg-4.col-xl-3.mb-4
+                    div.produit
+                        div.img-produit.card-img-top
+                        div.content-produit
+                            h3= `${product.name}`
+                            p= ` Prix: ${concat}`
+                            a(href=`/product/${product.id}`).btn.btn-primary En savoir +
+                        
+        a(href='/ajout') ajout

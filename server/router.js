@@ -50,6 +50,38 @@ router.get('/products', (req, res) => {
         })
 })
 
+router.get('/product/:id', (req, res) => {
+    const id = req.params.id
+
+    const currencies = currency.getCurrency()
+        .then(result => {
+            return result
+        })
+    Promise.all([currencies])
+        .then(curr => {
+            let factor = 1
+            let nameCurr ="EUR"
+            if (typeof req.query.currency !== 'undefined') {
+                factor = curr[0].rates[req.query.currency]
+                nameCurr = req.query.currency
+            }
+            if (req.query.currency == 'EUR') {
+                factor = 1
+            }
+            fakeDB.getOne(id)
+                .then(product => {
+                    console.log(currencies)
+                    res.render('product', {
+                        product: product,
+                        currencies: curr,
+                        curr: req.query.currency,
+                        factor: factor
+                    })
+                })
+
+        })
+})
+
 
 router.get('/add', (req, res) => {
     res.render('add')

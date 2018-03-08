@@ -23,10 +23,12 @@ function start()
     setTimeout(action, counter * 1000);
 }
 
-// document.getElementById("select_currency").addEventListener("change", function( event ) {
-//   document.getElementById("form_currency").submit()
-// }, false);
 
+if ($('#select_currency').length > 0) {
+    $("#select_currency").change((event) => {
+        $("#form_currency").submit()
+    })
+}
 jQuery(function($){
     $("#demarrer").click(function(){
         start();
