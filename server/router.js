@@ -16,4 +16,3 @@ router.get('/', (req, res) => {
 router.get('/list', (req, res) => {
     res.render('list')
 })
-
