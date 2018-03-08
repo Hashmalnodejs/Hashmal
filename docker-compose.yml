@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+  server:
+    image: node:8.9.4
+    command: node_modules/.bin/nodemon index.js
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+  browser-sync:
+    image: node:8.9.4
+    command: >
+        node_modules/.bin/browser-sync start
+        --proxy "server:8000"
+        --file="**/*"
+        --no-open
+    working_dir: /app
+    volumes:
+      - .:/app:ro
+    ports:
+      - "3000:3000"

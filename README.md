@@ -2,7 +2,7 @@
 
 Groupe Hashmal :
 
-Composé de Patrice Picollet, Antony Corot, Dylan Trochain et Le Hoang Dinh Nguyen
+Composé de Patrice Picollet, Antony Corrot, Dylan Trochain et Le Hoang Dinh Nguyen
 
 # Consignes
 
