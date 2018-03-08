@@ -2,16 +2,19 @@ extends ./template/base
 
 block body
     div.container
-        h1.text-center.my-5 Nos produits
-        form(id="form_currency", action='/products', method='get')
+        h1.text-center.mt-5.mb-3 Nos produits
+        form(id="form_currency", action='/products', method='get').w-25.mx-auto.mb-4
             include include/currency_form
         div.row.justify-content-center#productList
             each product in products
                 - var concat = (+product.priceEur * +factor).toFixed(2)
                 div.col-12.col-md-6.col-lg-4.col-xl-3.mb-4
                     div.produit
-                        div.img-produit.card-img-top
+                        div.img-produit.card-img-top.bg_cover(
+                            style="background-image: url(https://picsum.photos/200/?image="+ product.id +")"
+                        )
                         div.content-produit
+
                             h3= `${product.name}`
                             p= ` Prix: ${concat} ` + curr
                             a(href=`/product/${product.id}`).btn.btn-primary En savoir +
