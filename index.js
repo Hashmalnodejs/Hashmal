@@ -10,13 +10,17 @@ app.use(morgan('tiny'))
 app.use('/static', express.static('public'))
 /**
  * Si la requête est effectué entre la 49éme et la 59éme minute, nous renvoyons une erreur 408. (timeout error)
+ * Ajout du return pour éviter l'erreur "Can't set headers after they are sent "
  */
 app.use((req, res, next) => {
     const minutes = new Date().getMinutes()
     if (minutes > 48 && minutes <= 59) {
         return res.status(408).render('408')
+<<<<<<< HEAD
     } else {
         console.log('ok')
+=======
+>>>>>>> b2254e94044f16a8d7e4792e5d8e9c82c411b89a
     }
     next()
 })
